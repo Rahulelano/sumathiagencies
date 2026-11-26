@@ -1,0 +1,474 @@
+/* ==========================================================================
+   AboutSolarIllustration - Commercial Solar, Wind Farm, EV Charging & Smart Grid
+   ========================================================================== */
+
+.about-solar-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  user-select: none;
+  padding-bottom: 24px;
+}
+
+.about-solar-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 20px 45px rgba(2, 132, 199, 0.16));
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ==========================================================================
+   1. Radiant Sun & Solar Ray Animations
+   ========================================================================== */
+.about-sun-rays {
+  transform-origin: 110px 85px;
+  animation: aboutSunRaysSpin 28s linear infinite;
+}
+
+@keyframes aboutSunRaysSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.about-sun-ray-pulse {
+  animation: aboutSunRayPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes aboutSunRayPulse {
+  0% {
+    stroke-opacity: 0.65;
+    stroke-width: 2px;
+  }
+  100% {
+    stroke-opacity: 1;
+    stroke-width: 3.8px;
+  }
+}
+
+.about-sun-core-pulse {
+  animation: aboutSunPulse 4s ease-in-out infinite alternate;
+  transform-origin: 110px 85px;
+}
+
+@keyframes aboutSunPulse {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   2. Sunlight Beams & Streaming Photons
+   ========================================================================== */
+.about-sunbeam-shaft {
+  animation: aboutSunbeamBreathe 4s ease-in-out infinite alternate;
+}
+
+@keyframes aboutSunbeamBreathe {
+  0% {
+    opacity: 0.45;
+  }
+  100% {
+    opacity: 0.85;
+  }
+}
+
+.about-photon-beam-fast {
+  stroke-dasharray: 10 16;
+  animation: aboutPhotonFlow 0.85s linear infinite;
+}
+
+.about-photon-beam-slow {
+  stroke-dasharray: 8 14;
+  animation: aboutPhotonFlow 1.35s linear infinite;
+}
+
+@keyframes aboutPhotonFlow {
+  from {
+    stroke-dashoffset: 26;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ==========================================================================
+   3. Solar Panel Glint & Excitation Rings
+   ========================================================================== */
+.commercial-solar-glint {
+  animation: commercialGlint 4.2s ease-in-out infinite;
+}
+
+@keyframes commercialGlint {
+  0%, 15% {
+    opacity: 0.1;
+    transform: translateX(-35px);
+  }
+  50% {
+    opacity: 0.75;
+    transform: translateX(15px);
+  }
+  85%, 100% {
+    opacity: 0.1;
+    transform: translateX(35px);
+  }
+}
+
+.commercial-spark-ring {
+  transform-origin: 275px 285px;
+  animation: commercialSparkRing 2.4s cubic-bezier(0.2, 0.8, 0.3, 1) infinite;
+}
+
+.commercial-spark-ring-ground {
+  transform-origin: 175px 420px;
+  animation: commercialSparkRing 2.8s cubic-bezier(0.2, 0.8, 0.3, 1) infinite 0.7s;
+}
+
+@keyframes commercialSparkRing {
+  0% {
+    transform: scale(0.3);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   4. Wind Turbine Rotation & Atmospheric Breeze
+   ========================================================================== */
+.turbine-rotor {
+  transform-origin: 575px 140px;
+  animation: turbineRotorSpin 5s linear infinite;
+}
+
+@keyframes turbineRotorSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wind-breeze {
+  stroke-dasharray: 12 24;
+  animation: windBreezeFlow 2.2s linear infinite;
+}
+
+@keyframes windBreezeFlow {
+  from {
+    stroke-dashoffset: 72;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 0.2;
+  }
+}
+
+/* ==========================================================================
+   5. Commercial Facility Windows Illumination
+   ========================================================================== */
+.facility-window-lit {
+  animation: facilityGlowBreathe 3.6s ease-in-out infinite alternate;
+}
+
+@keyframes facilityGlowBreathe {
+  0% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.6));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 16px rgba(250, 204, 21, 0.95)) drop-shadow(0 0 24px rgba(56, 189, 248, 0.4));
+  }
+  100% {
+    opacity: 0.88;
+    filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.7));
+  }
+}
+
+/* ==========================================================================
+   6. EV Charging Bay & Car Animation
+   ========================================================================== */
+.ev-charger-pulse {
+  animation: evChargerGlow 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes evChargerGlow {
+  0% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.ev-battery-hud {
+  animation: evHudFloat 3s ease-in-out infinite alternate;
+}
+
+@keyframes evHudFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+.ev-cable-flow {
+  stroke-dasharray: 4 6;
+  animation: evCablePulse 0.9s linear infinite;
+}
+
+@keyframes evCablePulse {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ==========================================================================
+   7. BESS Battery & Grid Meter LED Displays
+   ========================================================================== */
+.bess-led-bar-1 {
+  animation: bessBarSeq 2s ease-in-out infinite;
+  animation-delay: 0.1s;
+}
+
+.bess-led-bar-2 {
+  animation: bessBarSeq 2s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.bess-led-bar-3 {
+  animation: bessBarSeq 2s ease-in-out infinite;
+  animation-delay: 0.9s;
+}
+
+.bess-led-bar-4 {
+  animation: bessBarSeq 2s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+@keyframes bessBarSeq {
+  0%, 25% {
+    opacity: 0.25;
+    fill: #64748b;
+  }
+  50%, 100% {
+    opacity: 1;
+    fill: #22c55e;
+    filter: drop-shadow(0 0 4px #22c55e);
+  }
+}
+
+.grid-meter-pulse {
+  animation: meterBlink 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes meterBlink {
+  0% {
+    opacity: 0.75;
+    filter: drop-shadow(0 0 3px #10b981);
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #10b981);
+  }
+}
+
+/* ==========================================================================
+   8. Electricity Conduit Flows & Traveling Orbs
+   ========================================================================== */
+.conduit-flow-solar {
+  stroke-dasharray: 8 14;
+  animation: gridConduitPulse 1.2s linear infinite;
+}
+
+.conduit-flow-wind {
+  stroke-dasharray: 8 14;
+  animation: gridConduitPulse 1.5s linear infinite;
+}
+
+.conduit-flow-grid {
+  stroke-dasharray: 6 12;
+  animation: gridConduitPulse 0.9s linear infinite;
+}
+
+.conduit-flow-ev {
+  stroke-dasharray: 6 10;
+  animation: gridConduitPulse 1s linear infinite;
+}
+
+@keyframes gridConduitPulse {
+  from {
+    stroke-dashoffset: 44;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.grid-energy-orb {
+  filter: drop-shadow(0 0 6px #10b981) drop-shadow(0 0 10px #38bdf8);
+}
+
+/* ==========================================================================
+   9. Floating Glassmorphism Telemetry Badges
+   ========================================================================== */
+.about-hud-badge {
+  position: absolute;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(186, 230, 253, 0.85);
+  border-radius: 9999px;
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.14), 0 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0c2340;
+  pointer-events: auto;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 10;
+}
+
+.about-hud-badge:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 16px 36px rgba(2, 132, 199, 0.22);
+}
+
+.about-hud-top-left {
+  top: 14px;
+  left: 14px;
+  animation: aboutHudFloat 6s ease-in-out infinite;
+}
+
+.about-hud-top-right {
+  top: 14px;
+  right: 14px;
+  animation: aboutHudFloat 6s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.about-hud-bottom-left {
+  bottom: 18px;
+  left: 14px;
+  animation: aboutHudFloat 6s ease-in-out infinite;
+  animation-delay: -3.5s;
+}
+
+.about-hud-bottom-right {
+  bottom: 18px;
+  right: 14px;
+  animation: aboutHudFloat 6s ease-in-out infinite;
+  animation-delay: -1.2s;
+}
+
+@keyframes aboutHudFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.about-hud-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: liveBlink 1.4s ease-in-out infinite;
+}
+
+.about-hud-dot-yellow {
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+}
+
+.about-hud-pill-tag {
+  background: #e0f2fe;
+  color: #0284c7;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.about-hud-pill-emerald {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 960px) {
+  .about-solar-wrap {
+    max-width: 500px;
+    margin: 20px auto 0;
+  }
+  .about-hud-badge {
+    font-size: 10px;
+    padding: 6px 11px;
+  }
+  .about-hud-top-left {
+    top: 6px;
+    left: 6px;
+  }
+  .about-hud-top-right {
+    top: 6px;
+    right: 6px;
+  }
+  .about-hud-bottom-left {
+    bottom: 6px;
+    left: 6px;
+  }
+  .about-hud-bottom-right {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-solar-wrap {
+    max-width: 100%;
+  }
+  .about-hud-top-right {
+    display: none;
+  }
+  .about-hud-badge {
+    font-size: 9.5px;
+    padding: 5px 9px;
+  }
+}

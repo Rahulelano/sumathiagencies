@@ -1,0 +1,499 @@
+/* ==========================================================================
+   Solar Hero Illustration - Sunlight to Solar Panel to House Energy Flow
+   ========================================================================== */
+
+.solar-hero-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  margin: 0 auto;
+  user-select: none;
+  padding-bottom: 24px;
+}
+
+.solar-hero-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 24px 48px rgba(2, 132, 199, 0.14));
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ==========================================================================
+   1. Sun & Solar Flares Animations
+   ========================================================================== */
+.sun-core-pulse {
+  transform-origin: 125px 105px;
+  animation: sunCoreBreath 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes sunCoreBreath {
+  0%, 15% {
+    transform: scale(0.8);
+    opacity: 0.78;
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.35));
+  }
+  85%, 100% {
+    transform: scale(1.24);
+    opacity: 1;
+    filter: drop-shadow(0 0 32px rgba(245, 158, 11, 0.95)) drop-shadow(0 0 55px rgba(253, 224, 71, 0.75));
+  }
+}
+
+.sun-corona-spin {
+  transform-origin: 125px 105px;
+  animation: sunCoronaRotate 35s linear infinite;
+}
+
+@keyframes sunCoronaRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sun-ray-pulse {
+  transform-origin: 125px 105px;
+  animation: sunRayPulse 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes sunRayPulse {
+  0%, 15% {
+    opacity: 0.25;
+    transform: scale(0.76);
+  }
+  85%, 100% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+/* ==========================================================================
+   2. Sunlight Beams & Photon Stream
+   ========================================================================== */
+.sunbeam-shaft {
+  animation: sunbeamBreathe 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes sunbeamBreathe {
+  0%, 15% {
+    opacity: 0.12;
+  }
+  85%, 100% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 16px rgba(254, 240, 138, 0.85));
+  }
+}
+
+.photon-beam-line {
+  stroke-dasharray: 14 26;
+  animation: streamPhotons 1.4s linear infinite;
+}
+
+.photon-beam-line-fast {
+  stroke-dasharray: 8 20;
+  animation: streamPhotons 1.1s linear infinite;
+}
+
+.photon-beam-line-slow {
+  stroke-dasharray: 16 32;
+  animation: streamPhotons 1.8s linear infinite;
+}
+
+@keyframes streamPhotons {
+  0% {
+    stroke-dashoffset: 80;
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.4;
+  }
+}
+
+/* ==========================================================================
+   3. Solar Panel Energy Generation Hotspot (Excitation Spark)
+   ========================================================================== */
+.solar-spark-ring {
+  transform-origin: 320px 205px;
+  animation: solarSparkExpand 2.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+}
+
+.solar-spark-ring-delayed {
+  transform-origin: 320px 205px;
+  animation: solarSparkExpand 2.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+  animation-delay: 1.1s;
+}
+
+@keyframes solarSparkExpand {
+  0% {
+    transform: scale(0.3);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.7);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.solar-spark-core {
+  transform-origin: 320px 205px;
+  animation: sparkCoreZap 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes sparkCoreZap {
+  0% {
+    transform: scale(0.85) rotate(-5deg);
+    filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.9));
+  }
+  100% {
+    transform: scale(1.2) rotate(15deg);
+    filter: drop-shadow(0 0 16px rgba(250, 204, 21, 1));
+  }
+}
+
+.panel-shimmer {
+  animation: panelGlint 4s ease-in-out infinite;
+}
+
+@keyframes panelGlint {
+  0%, 15% {
+    opacity: 0.15;
+    transform: translateX(-40px);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(10px);
+  }
+  85%, 100% {
+    opacity: 0.15;
+    transform: translateX(40px);
+  }
+}
+
+/* ==========================================================================
+   4. Electric Conduit & Moving Energy Packets
+   ========================================================================== */
+.conduit-flow-green {
+  stroke-dasharray: 8 14;
+  animation: electricityFlow 1.3s linear infinite;
+}
+
+.conduit-flow-cyan {
+  stroke-dasharray: 6 12;
+  animation: electricityFlow 1s linear infinite;
+}
+
+.conduit-flow-gold {
+  stroke-dasharray: 10 16;
+  animation: electricityFlow 1.6s linear infinite;
+}
+
+@keyframes electricityFlow {
+  from {
+    stroke-dashoffset: 48;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.conduit-glow-base {
+  filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.7));
+}
+
+/* Moving energy pulse dots */
+.pulse-orb {
+  filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.95)) drop-shadow(0 0 10px rgba(56, 189, 248, 0.8));
+}
+
+/* ==========================================================================
+   5. House Windows Lighting Up Dynamically in Direct Sync with Sun
+   - When Sun gets BIGGER -> Lights turn ON (Warm Gold Glow & Ambient Bloom)
+   - When Sun gets SMALLER -> Lights turn OFF (Dark Reflective Slate Glass)
+   ========================================================================== */
+.window-light-pane,
+.door-light-pane {
+  animation: windowLightSwitch 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes windowLightSwitch {
+  0%, 20% {
+    opacity: 0;
+    filter: none;
+  }
+  50% {
+    opacity: 0.45;
+    filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.5));
+  }
+  85%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 18px rgba(250, 204, 21, 0.95)) drop-shadow(0 0 30px rgba(253, 224, 71, 0.7));
+  }
+}
+
+.ambient-light-spill {
+  animation: ambientBloomSwitch 4.5s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes ambientBloomSwitch {
+  0%, 20% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  55% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  85%, 100% {
+    opacity: 0.95;
+    transform: scale(1.25);
+  }
+}
+
+.porch-light-bulb {
+  animation: porchLightSwitch 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes porchLightSwitch {
+  0%, 20% {
+    opacity: 0.12;
+    filter: none;
+  }
+  85%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(253, 224, 71, 1));
+  }
+}
+
+/* ==========================================================================
+   6. Battery Storage & EV Fast Charger Indicator
+   ========================================================================== */
+.battery-bar-1 {
+  animation: chargeBarSeq 2.4s ease-in-out infinite;
+  animation-delay: 0.1s;
+}
+
+.battery-bar-2 {
+  animation: chargeBarSeq 2.4s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.battery-bar-3 {
+  animation: chargeBarSeq 2.4s ease-in-out infinite;
+  animation-delay: 1.1s;
+}
+
+.battery-bar-4 {
+  animation: chargeBarSeq 2.4s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+@keyframes chargeBarSeq {
+  0%, 20% {
+    opacity: 0.3;
+    fill: #94a3b8;
+  }
+  40%, 100% {
+    opacity: 1;
+    fill: #22c55e;
+    filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.8));
+  }
+}
+
+.ev-charge-pulse {
+  animation: evChargeBlink 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes evChargeBlink {
+  0% {
+    opacity: 0.75;
+    filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.5));
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 14px rgba(34, 197, 94, 0.95));
+  }
+}
+
+.ev-port-pulse {
+  animation: evPortBlink 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes evPortBlink {
+  0% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.ev-charger-screen-glow {
+  animation: chargerScreenPulse 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes chargerScreenPulse {
+  0% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.ev-headlight-glow {
+  animation: headlightGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes headlightGlow {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   7. Floating Glassmorphism Telemetry Badges
+   ========================================================================== */
+.solar-hud-badge {
+  position: absolute;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(186, 230, 253, 0.85);
+  border-radius: 9999px;
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0c2340;
+  pointer-events: auto;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  z-index: 10;
+}
+
+.solar-hud-badge:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 16px 36px rgba(2, 132, 199, 0.2), 0 0 12px rgba(56, 189, 248, 0.3);
+  border-color: #0284c7;
+}
+
+.solar-hud-top {
+  top: 14px;
+  right: 18px;
+  animation: hudBadgeFloat 6s ease-in-out infinite;
+}
+
+.solar-hud-bottom {
+  bottom: 12px;
+  left: 12px;
+  animation: hudBadgeFloat 6s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.solar-hud-battery {
+  bottom: 84px;
+  right: 16px;
+  animation: hudBadgeFloat 5.5s ease-in-out infinite;
+  animation-delay: -1.5s;
+}
+
+@keyframes hudBadgeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.hud-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: liveBlink 1.4s ease-in-out infinite;
+}
+
+.hud-dot-yellow {
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+}
+
+.hud-pill-tag {
+  background: #e0f2fe;
+  color: #0284c7;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 960px) {
+  .solar-hero-wrap {
+    max-width: 520px;
+    margin: 30px auto 0;
+    padding-bottom: 20px;
+  }
+  .solar-hud-badge {
+    font-size: 10px;
+    padding: 6px 11px;
+  }
+  .solar-hud-top {
+    top: 6px;
+    right: 6px;
+  }
+  .solar-hud-bottom {
+    bottom: 8px;
+    left: 8px;
+  }
+  .solar-hud-battery {
+    bottom: 58px;
+    right: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .solar-hero-wrap {
+    max-width: 100%;
+    padding-bottom: 18px;
+  }
+  .solar-hud-battery {
+    display: none;
+  }
+  .solar-hud-top {
+    top: 0px;
+    right: 4px;
+    font-size: 9.5px;
+    padding: 5px 9px;
+  }
+  .solar-hud-bottom {
+    bottom: 4px;
+    left: 4px;
+    font-size: 9.5px;
+    padding: 5px 9px;
+  }
+}
